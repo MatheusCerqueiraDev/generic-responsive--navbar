@@ -1,0 +1,106 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--main-blue);
+  height: 5rem;
+  font-size: 1rem;
+  //optional
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  //optional
+
+  .navContainer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    height: 1rem;
+    max-width: 1120px;
+    padding: 0 1.5rem;
+    width: 100%;
+    z-index: 1;
+  }
+  h1 {
+    a {
+      align-items: center;
+      display: flex;
+      justify-self: flex-start;
+
+      color: inherit;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+
+      :-webkit-any(article, aside, nav, section) h1 {
+        font-size: 1.5em;
+        margin-block-start: 0;
+        margin-block-end: 0;
+      }
+    }
+  }
+
+  .mobileIcon {
+    display: none;
+  }
+
+  .navMenu {
+    align-items: center;
+    display: flex;
+
+    list-style: none;
+    margin-right: -1.4rem;
+    text-align: center;
+
+    .navItem {
+      a {
+        align-items: center;
+        display: flex;
+        justify-self: flex-start;
+
+        color: inherit;
+        font-size: 1.5rem;
+        font-weight: 700;
+        height: inherit;
+        text-decoration: none;
+
+        :-webkit-any(article, aside, nav, section) h1 {
+          font-size: 1.5em;
+          margin-block-start: 0;
+          margin-block-end: 0;
+
+          &.active {
+            border-bottom: 3px solid var(--pink-900);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .header {
+    height: 5rem;
+    transition: 0.8s all ease;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navContainer {
+    .mobileIcon {
+      display: block;
+
+      cursor: pointer;
+      font-size: 1.8rem;
+      position: absolute;
+      right: 0;
+      transform: translate(-100%, 60%);
+      top: 0;
+    }
+    .navMenu {
+      display: none;
+    }
+  }
+}

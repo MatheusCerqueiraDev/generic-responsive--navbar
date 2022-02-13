@@ -1,0 +1,71 @@
+.SidebarHidden {
+  display: hidden;
+}
+
+.SidebarContainer {
+  align-items: center;
+  display: grid;
+  top: 0;
+  left: 0;
+
+  background: var(--orange-900);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+
+  transition: 0.3s ease-in-out;
+
+  .mobileIcon {
+    display: block;
+
+    cursor: pointer;
+    font-size: 1.8rem;
+    position: absolute;
+    right: 0;
+    transform: translate(-100%, 60%);
+    top: 0;
+  }
+
+  .SidebarWrapper {
+    .SiderbarMenu {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeast(6, 80px);
+
+      text-align: center;
+
+      //reseting default values
+      list-style-type: none;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+      padding-inline-start: 0;
+      //reseting default values
+
+      .SidebarItem {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+
+        color: var(--orange-900);
+        cursor: pointer;
+        font-size: 600;
+
+        transition: 0.2s ease-in-out;
+
+        .SidebarLink {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .SiderbarMenu {
+    grid-template-rows: (6, 60px);
+  }
+}
